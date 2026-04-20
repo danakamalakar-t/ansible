@@ -6,7 +6,8 @@
     GENDER: "Male"
     LOCATION: "Kothagudem"
   tasks:
-    - name: print the variables
+  - name: print the variables
+    vars:
       LOCATION: "Warangal"
-      ansible.builtin.debug:
+    ansible.builtin.debug:
         msg: "My name is {{ NAME }}. I am a {{ GENDER }}. I live in {{ LOCATION }}."
