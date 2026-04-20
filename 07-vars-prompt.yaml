@@ -1,0 +1,14 @@
+- name: variables from prompt
+  hosts: local
+  connection: local #Ansible will run the playbook on the local machine
+  vars_prompt:
+  - name: "user_name"
+    prompt: "Please enter user name"
+    private: no
+  - name: "password"
+    prompt: "Please enter password"
+    private: yes
+  tasks:
+  - name: print the variables from prompt
+    ansible.builtin.debug:
+      msg: "User name is {{ user_name }} and password is {{ password }}."
