@@ -1,0 +1,7 @@
+- name: variables from command line arguments
+  hosts: local
+  connection: local #Ansible will run the playbook on the local machine
+  tasks:
+    - name: print the variables from command line arguments
+      ansible.builtin.debug:
+        msg: "My name is {{ NAME }}. I am a {{ GENDER }}. I live in {{ LOCATION }}."
