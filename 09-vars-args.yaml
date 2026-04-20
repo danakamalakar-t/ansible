@@ -1,13 +1,7 @@
 - name: variables from command line arguments
   hosts: localhost
   connection: local
-
   tasks:
-    - name: fail if variables not passed
-      ansible.builtin.fail:
-        msg: "Please pass NAME, GENDER, LOCATION using -e"
-      when: NAME is not defined or GENDER is not defined or LOCATION is not defined
-
-    - name: print variables
-      ansible.builtin.debug:
-        msg: "My name is {{ NAME }}. I am a {{ GENDER }}. I live in {{ LOCATION }}."
+  - name: print variables
+    ansible.builtin.debug:
+     msg: "My name is {{ NAME }}. I am a {{ GENDER }}. I live in {{ LOCATION }}."
