@@ -1,0 +1,9 @@
+- name: variables from files
+  hosts: local
+  connection: local #Ansible will run the playbook on the local machine
+  vars_files:
+    - coures.yaml
+  tasks:
+    - name: print the variables from files  
+      ansible.builtin.debug:
+        msg: "My name is {{ NAME }}. I am a {{ GENDER }}. I live in {{ LOCATION }}."  
